@@ -11,3 +11,6 @@ Use other datasets: Modify `parser.add_argument('--dataset', type=str, default='
 Use other model: Choose another model in `model.py`.
 
 Use other attacks: Modify `parser.add_argument('--epsilon_test', type=float, default=0.01)`, `parser.add_argument('--eps_iter_test', type=float, default=0.01)`, `parser.add_argument('--nb_iter_test', type=int, default=1)` in `main.py`.
+
+
+Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
