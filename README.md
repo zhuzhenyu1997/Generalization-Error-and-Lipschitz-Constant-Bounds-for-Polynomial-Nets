@@ -14,3 +14,6 @@ Use other attacks: Modify `parser.add_argument('--epsilon_test', type=float, def
 
 
 Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
+
+
+## More experiments (L2, Jacobian regularization, adversarial training) to be updated
