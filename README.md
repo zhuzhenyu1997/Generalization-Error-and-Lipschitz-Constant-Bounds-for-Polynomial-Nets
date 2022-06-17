@@ -28,17 +28,17 @@ The folder and files structure is the following:
 
 To run the experiment for single bound projection method for PN-Conv in Fashion-MNIST, you can execute the following command:
 
-&#8194 `python main.py`
+&emsp `python main.py`
 
 For other experiment settings:
 
-&#8194 Use other datasets: Modify `parser.add_argument('--dataset', type=str, default='FashionMNIST')` in `main.py`.
+&emsp Use other datasets: Modify `parser.add_argument('--dataset', type=str, default='FashionMNIST')` in `main.py`.
 
-&#8194 Use other model: Choose another model in `model.py`.
+&emsp Use other model: Choose another model in `model.py`.
 
-&#8194 Use other attacks: Modify `parser.add_argument('--epsilon_test', type=float, default=0.01)`, `parser.add_argument('--eps_iter_test', type=float, default=0.01)`, `parser.add_argument('--nb_iter_test', type=int, default=1)` in `main.py`.
+&emsp Use other attacks: Modify `parser.add_argument('--epsilon_test', type=float, default=0.01)`, `parser.add_argument('--eps_iter_test', type=float, default=0.01)`, `parser.add_argument('--nb_iter_test', type=int, default=1)` in `main.py`.
 
-&#8194 Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
+&emsp Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
 
 
 ## More experiments (L2 regularization, Jacobian regularization, adversarial training) to be updated
