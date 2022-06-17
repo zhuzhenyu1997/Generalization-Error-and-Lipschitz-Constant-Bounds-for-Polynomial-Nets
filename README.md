@@ -26,7 +26,10 @@ The folder and files structure is the following:
 
 ## Run experiment
 
-Use our single bound projection method for PN-Conv in Fashion-MNIST: `python main.py`.
+To run the experiment for single bound projection method for PN-Conv in Fashion-MNIST, you can execute the following command::
+
+`python main.py`
+
 
 Use other datasets: Modify `parser.add_argument('--dataset', type=str, default='FashionMNIST')` in `main.py`.
 
