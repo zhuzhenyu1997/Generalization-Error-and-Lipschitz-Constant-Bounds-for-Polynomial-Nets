@@ -4,6 +4,26 @@ Official PyTorch implementation of the Projected Stochastic Gradient Descent in 
 
 Specifically, we include the code for projected during training and attack during testing.
 
+## Browsing the folder and files
+
+The folder and files structure is the following:
+
+`utils/dataset.py`: Describes some parsers for dataset; normally you should not modify it for provided dataset(s).
+
+`utils/evaluation.py`: A class for calculating the average.
+
+`utils/param_parser.py`: Some classes for some extra parameter parsers.
+
+`utils/projection.py`: A library contains a series of projection operators.
+
+`utils/seq_parser.py`: A library controls the learning rate for step descent.
+
+`main.py`: It is used for experiment setting and to make the code starting.
+
+`model.py`: It contains fully connected polynomial network model and the convolutional polynomial network model we mentioned in the paper.
+
+`solver.py`: It contains the training and testing part of the code.
+
 ## Run experiment
 
 Use our single bound projection method for PN-Conv in Fashion-MNIST: `python main.py`.
