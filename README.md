@@ -41,3 +41,11 @@ For other experiment settings:
 &emsp; Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
 
 More experiments (L2 regularization, Jacobian regularization, adversarial training) to be updated.
+
+## Requirements
+
+The code requires the following librarys.
+
+Tested on a Linux machine with:
+
+&emsp; * numpy=1.20.1,
