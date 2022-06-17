@@ -26,19 +26,19 @@ The folder and files structure is the following:
 
 ## Run experiment
 
-To run the experiment for single bound projection method for PN-Conv in Fashion-MNIST, you can execute the following command::
+To run the experiment for single bound projection method for PN-Conv in Fashion-MNIST, you can execute the following command:
 
-`python main.py`
+&#8194 `python main.py`
 
+For other experiment settings:
 
-Use other datasets: Modify `parser.add_argument('--dataset', type=str, default='FashionMNIST')` in `main.py`.
+&#8194 Use other datasets: Modify `parser.add_argument('--dataset', type=str, default='FashionMNIST')` in `main.py`.
 
-Use other model: Choose another model in `model.py`.
+&#8194 Use other model: Choose another model in `model.py`.
 
-Use other attacks: Modify `parser.add_argument('--epsilon_test', type=float, default=0.01)`, `parser.add_argument('--eps_iter_test', type=float, default=0.01)`, `parser.add_argument('--nb_iter_test', type=int, default=1)` in `main.py`.
+&#8194 Use other attacks: Modify `parser.add_argument('--epsilon_test', type=float, default=0.01)`, `parser.add_argument('--eps_iter_test', type=float, default=0.01)`, `parser.add_argument('--nb_iter_test', type=int, default=1)` in `main.py`.
 
-
-Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
+&#8194 Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
 
 
 ## More experiments (L2 regularization, Jacobian regularization, adversarial training) to be updated
