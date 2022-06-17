@@ -48,4 +48,10 @@ The code requires the following librarys.
 
 Tested on a Linux machine with:
 
-&emsp; * numpy=1.20.1,
+&emsp; * numpy=1.20.1
+
+&emsp; * torch=1.8.1
+
+&emsp; * torchvision=0.4.2
+
+&emsp; * torchattacks=2.14.1
