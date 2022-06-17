@@ -40,5 +40,4 @@ For other experiment settings:
 
 &emsp; Use other hyperparameters: Modify corresponding hyperparameters in `main.py`.
 
-
-## More experiments (L2 regularization, Jacobian regularization, adversarial training) to be updated
+More experiments (L2 regularization, Jacobian regularization, adversarial training) to be updated.
