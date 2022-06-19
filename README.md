@@ -1,6 +1,6 @@
 # Generalization-Error-and-Lipschitz-Constant-Bounds-for-Polynomial-Nets
 
-Official PyTorch implementation of the Projected Stochastic Gradient Descent in Polynomial Nets as described on the ICLR'22 paper "Controlling the Complexity and Lipschitz Constant improves Polynomial Nets".
+Official PyTorch implementation of the Projected Stochastic Gradient Descent in Polynomial Nets as described on the ICLR'22 paper "[Controlling the Complexity and Lipschitz Constant improves Polynomial Nets](https://openreview.net/pdf?id=dQ7Cy_ndl1s)" and its extension (under review).
 
 Specifically, we include the code for projected during training and attack during testing.
 
