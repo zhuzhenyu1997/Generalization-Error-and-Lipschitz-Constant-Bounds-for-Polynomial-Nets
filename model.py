@@ -1,6 +1,8 @@
 import torch.nn as nn
 import torch
 
+
+### PN-4 model
 # class CCP(nn.Module):
 #     def __init__(self, hidden_size):
 #         super(CCP, self).__init__()
@@ -22,7 +24,7 @@ import torch
 #         out = self.C(out)
 #         return out
 
-
+### PN-Conv model
 class CCP(nn.Module):
     def __init__(self, n_channels, n_degree=4, kernel_size=7, bias=False, downsample_degs=[2, 3], use_alpha=False, use_preconv=True):
         super(CCP, self).__init__()

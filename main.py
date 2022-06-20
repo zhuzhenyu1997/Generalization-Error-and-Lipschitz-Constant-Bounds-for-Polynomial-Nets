@@ -6,11 +6,15 @@ import json
 from utils.param_parser import *
 import time
 
+
+# Save configs in a json file.
 def save_config(config, shared_path):
     save_path = os.path.join(shared_path, "params.json")
 
     with open(save_path, 'w') as fp:
         json.dump(config.__dict__, fp, indent=4, sort_keys=True)
+
+
 
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
@@ -20,6 +24,7 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+# Function to get the time now.
 def get_time():
     return datetime.now().strftime("%d%m_%H%M%S")
 

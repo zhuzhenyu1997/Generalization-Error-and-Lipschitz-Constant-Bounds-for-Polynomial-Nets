@@ -107,6 +107,7 @@ class Solver(object):
 
         for epoch in range(self.num_epochs):
 
+            # Reset the calculators for training
             acc_calculator.reset()
             loss_calculator.reset()
             self.model.train()
@@ -122,16 +123,16 @@ class Solver(object):
                 if i == 0:
                     print('Learning rate = %1.2e' % lr_this_batch)
 
-
                 data = data.type(torch.FloatTensor)
                 data = to_cuda(data)
                 labels = to_cuda(labels)
 
+                # attack during training
                 if self.attack_training == True and epoch >= self.attack_pretrain:
                     with ctx_noparamgrad_and_eval(self.model):
                         data = self.adversary_train(data, labels)
-                        # data = fgsm_attack(self.model, self.criterion, data, labels, self.epsilon)
 
+                # training step
                 self.optimizer.zero_grad()
                 pred = self.model(data)
                 loss = self.criterion(pred, labels)
@@ -139,6 +140,7 @@ class Solver(object):
                 loss.backward()
                 self.optimizer.step()
 
+                # projection
                 if self.project == True and self.pretrain == True and self.pretrain_epochs <= epoch and (i+1) % self.project_frequency == 0:
                     with torch.no_grad():
                         params = list(self.model.named_parameters())
@@ -175,6 +177,7 @@ class Solver(object):
             acc_this_epoch = acc_calculator.average
             print('Train loss / acc after epoch %d: %.4f / %.2f%%' % ((epoch + 1), loss_this_epoch, acc_this_epoch * 100.))
 
+            # Reset the calculators for testing
             loss_calculator.reset()
             acc_calculator.reset()
             if self.attack == True:
@@ -194,6 +197,7 @@ class Solver(object):
                 loss_calculator.update(loss_test.item(), data_test.size(0))
                 acc_calculator.update(acc_test.item(), data_test.size(0))
 
+                # attack during testing
                 if self.attack == True:
                     with ctx_noparamgrad_and_eval(self.model):
                         data_test = self.adversary_test(data_test, labels_test)
@@ -209,6 +213,7 @@ class Solver(object):
             acc_this_epoch = acc_calculator.average
             print('Test loss / acc after epoch %d: %.4f / %.2f%%' % ((epoch + 1), loss_this_epoch, acc_this_epoch * 100.))
 
+            # record the best model
             if self.attack == True:
                 attack_loss_this_epoch = loss_calculator_.average
                 attack_acc_this_epoch = acc_calculator_.average
@@ -230,6 +235,8 @@ class Solver(object):
                 CCP_model_path = os.path.join(self.model_path, 'model-{}.pkl'.format(epoch+1))
                 torch.save(self.model.state_dict(), CCP_model_path)
 
+
+        # save the final best model
         CCP_model_path = os.path.join(self.model_path, 'model-best.pkl')
         torch.save(self.best_model.state_dict(), CCP_model_path)
         print('Best acc is after epoch %d: %.2f%%' % ((self.best_epoch + 1), self.best_acc * 100.))
