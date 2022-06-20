@@ -1,3 +1,5 @@
+# A class for recording results and computing the average
+
 class AverageCalculator(object):
 
     def __init__(self):

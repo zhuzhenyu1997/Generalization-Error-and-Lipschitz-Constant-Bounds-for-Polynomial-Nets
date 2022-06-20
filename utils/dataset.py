@@ -2,6 +2,8 @@ import torch
 from torchvision import datasets, transforms
 from torch.utils.data import SubsetRandomSampler
 
+
+# Dataloader for MNIST
 def mnist(batch_size, data_augmentation = True, shuffle = True, valid_ratio = None):
 
     transform = transforms.Compose(
@@ -37,6 +39,7 @@ def mnist(batch_size, data_augmentation = True, shuffle = True, valid_ratio = No
 
         return train_loader, None, test_loader, classes
 
+# Dataloader for FashionMNIST
 def FashionMNIST(batch_size, data_augmentation = True, shuffle = True, valid_ratio = None):
 
     transform = transforms.Compose(
@@ -72,6 +75,7 @@ def FashionMNIST(batch_size, data_augmentation = True, shuffle = True, valid_rat
 
         return train_loader, None, test_loader, classes
 
+# Dataloader for CIFAR10
 def CIFAR10(batch_size, data_augmentation = True, shuffle = True, valid_ratio = None):
 
     transform = transforms.Compose(

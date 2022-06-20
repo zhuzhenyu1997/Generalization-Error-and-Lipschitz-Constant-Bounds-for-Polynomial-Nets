@@ -13,8 +13,6 @@ def soft_thresh(lambda_, x):
 
 
 def proj_simplex(x, r):
-    """
-    """
     idx = torch.sum(x, dim=1) > r
     x_ = x[idx]
     n, m = x_.shape

@@ -1,5 +1,4 @@
 # some extra parameter parsers
-
 import argparse
 
 class DictParser(argparse.Action):
